@@ -6,16 +6,28 @@
 
 Arduino_LED_Matrix matrix;
 
-// Flor de 8 filas x 13 columnas, en formato fila por fila.
-const uint8_t flower[104] = {
-  0,0,0,0,0,1,0,1,0,0,0,0,0,
-  0,0,0,0,1,1,1,1,1,0,0,0,0,
+// Flores de 8 filas x 13 columnas, en formato fila por fila.
+// El centro queda separado de los petalos para que la figura se entienda mejor.
+const uint8_t flowerA[104] = {
+  0,0,0,0,0,1,1,1,0,0,0,0,0,
   0,0,0,1,1,1,1,1,1,1,0,0,0,
+  0,0,1,1,1,0,1,0,1,1,1,0,0,
+  0,1,1,0,0,1,1,1,0,0,1,1,0,
   0,0,1,1,1,1,1,1,1,1,1,0,0,
-  0,0,0,1,1,1,1,1,1,1,0,0,0,
   0,0,0,0,1,1,1,1,1,0,0,0,0,
   0,0,0,0,0,0,1,0,0,0,0,0,0,
-  0,0,0,0,0,0,1,0,0,0,0,0,0
+  0,0,0,1,1,0,1,0,0,1,1,0,0
+};
+
+const uint8_t flowerB[104] = {
+  0,0,0,0,0,1,1,1,0,0,0,0,0,
+  0,0,0,1,1,1,1,1,1,1,0,0,0,
+  0,0,1,1,1,1,0,1,1,1,1,0,0,
+  0,1,1,0,1,1,1,1,1,0,1,1,0,
+  0,0,1,1,1,1,0,1,1,1,1,0,0,
+  0,0,0,0,1,1,1,1,1,0,0,0,0,
+  0,0,0,0,0,0,1,0,0,0,0,0,0,
+  0,0,0,1,1,0,1,0,0,1,1,0,0
 };
 
 void setup() {
@@ -33,7 +45,11 @@ void loop() {
 
   delay(500);
 
-  matrix.draw(flower);
-  delay(1800);
+  matrix.draw(flowerA);
+  delay(600);
+  matrix.draw(flowerB);
+  delay(600);
+  matrix.draw(flowerA);
+  delay(600);
   matrix.clear();
 }
