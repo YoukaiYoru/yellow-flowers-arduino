@@ -27,14 +27,12 @@ void setup() {
 }
 
 void loop() {
-  // El mensaje avanza automáticamente por la matriz integrada.
   matrix.beginText(0, 0, 127, 0, 0);
   matrix.print(" FELIZ PRIMAVERA ");
   matrix.endText(SCROLL_LEFT);
 
   delay(500);
 
-  // Después aparece la flor durante unos segundos.
   matrix.draw(flower);
   delay(1800);
   matrix.clear();
